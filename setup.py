@@ -12,17 +12,15 @@ with open('awesome_cart/__init__.py', 'rb') as f:
         version = str(ast.literal_eval(_version_re.search(
                 f.read().decode('utf-8')).group(1)))
 
-requirements = parse_requirements("requirements.txt", session="")
 
 setup(
-	name='awesome_cart',
-	version=version,
-	description='A one page checkout experience cart replacement for ERPNext',
-	author='DigitThinkIt, Inc.',
-	author_email='forellana@digithinkit.com',
-	packages=find_packages(),
-	zip_safe=False,
-	include_package_data=True,
-	install_requires=[str(ir.req) for ir in requirements],
-	dependency_links=[str(ir._link) for ir in requirements if ir._link]
+        name='awesome_cart',
+        version=version,
+        description='Cart',
+        author='PUNIA',
+        author_email='dev@punia.online',
+        packages=find_packages(),
+        zip_safe=False,
+        include_package_data=True,
+        install_requires=install_requires
 )
